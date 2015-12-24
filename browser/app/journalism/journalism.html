@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row story-block" ng-repeat="story in stories | orderBy: '-airDate'">
+    <div class="col-sm-2">
+      <h3>{{story.airDate | date}}</h3>
+    </div>
+    <div class="col-sm-5">
+      <h3></h3>
+      <h3>{{story.title}}</h3>
+      <p>{{story.description}}</p>
+    </div>
+    <div class="col-sm-5">
+      <!-- 500 x 281 -->
+      <iframe width="400" height="225" ng-src="{{getVideoUrl(story)}}" frameborder="0" allowfullscreen></iframe>              
+      
+<!--       <a class="btn btn-primary" data-toggle="modal" href='#{{story.videoUri}}'>Trigger modal</a>
+ -->
+<!--       <div class="modal fade" id="{{story.videoUri}}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Megan's Video</h4>
+            </div>
+            <div class="modal-body">
+              <iframe width="500" height="281" ng-src="{{getVideoUrl(story)}}" frameborder="0" allowfullscreen></iframe>              
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>

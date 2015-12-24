@@ -1,0 +1,31 @@
+<div class="container">
+  <h3 ng-show="lastStorySaved">Your story was saved: {{lastStorySaved.title}}</h3>
+  <legend>Fill in details below to add a new story to the database</legend>
+  <form role="form" name="storyInfoForm" ng-submit="postStory(storyDetails)">
+    <div class="form-group">
+      <label for="title">Story Title:</label>
+      <input type="text" class="form-control" id="title" ng-model="storyDetails.title">
+    </div>
+    <p>{{storyDetails.title}}</p>
+    <div class="form-group">
+      <label for="airDate">Original air date:</label>
+      <input type="date" class="form-control" id="airDate" ng-model="storyDetails.airDate">
+    </div>
+    <p>{{storyDetails.airDate}}</p>
+    <div class="form-group">
+      <label for="description">Story description:</label>
+      <textarea class="form-control" id="description" ng-model="storyDetails.description">enter blurb</textarea>
+    </div>
+    <div class="form-group">
+      <label for="storyType">Story type:</label>
+      <input type="radio" name="storyType" value="journalism"  ng-model="storyDetails.type" checked> Journalism
+      <input type="radio" name="storyType" value="documentary" ng-model="storyDetails.type"> Documentary
+    </div>
+    <div class="form-group">
+      <label for="videoUri">Video source URI:</label>
+      <input type="text" class="form-control" id="videoUri" ng-model="storyDetails.videoUri" placeholder="eg. y99kODtyVhk">
+    </div>
+
+    <button type="submit" class="btn btn-success">Add story to database</button>
+  </form>
+</div>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Megan B Thompson</title>
+
+    <!-- external CSS dependencies -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="bootstrap-social.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+
+    <!-- local CSS dependencies --> 
+    <link href="app/main.css" rel="stylesheet"/>
+    <link href="components/navbar/navbar.css" rel="stylesheet"/>
+    <link href="components/jumbotron/jumbotron.css" rel="stylesheet"/>
+    <link href="components/connect/connect.css" rel="stylesheet"/>
+    <link href="components/footer/footer.css" rel="stylesheet"/>
+    <link href="components/signin/signin.css" rel="stylesheet"/>
+    <link href="app/about/about.css" rel="stylesheet"/>
+    <link href="app/contact/contact.css" rel="stylesheet"/>
+    <link href="app/journalism/journalism.css" rel="stylesheet"/>
+    <link href="app/documentary/documentary.css" rel="stylesheet"/>
+    <link href="app/home/home.css" rel="stylesheet"/>
+
+    <!--external JS dependencies-->
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>  
+    <script src="angular.min.js"></script>
+    <script src="release/angular-ui-router.min.js"></script>
+
+    <!--local JS dependencies-->
+    <script src="app/main.js"></script>
+    <script src="app/story.factory.js"></script>
+    <script src="utils/auth.factory.js"></script>    
+    <script src="utils/subscriber.factory.js"></script>    
+    <script src="components/navbar/navbar.directive.js"></script>
+    <script src="components/jumbotron/jumbotron.directive.js"></script>
+    <script src="components/connect/connect.directive.js"></script>
+    <script src="components/connect/connect.controller.js"></script>
+    <script src="components/footer/footer.directive.js"></script>
+    <script src="components/signin/signin.directive.js"></script>
+    <script src="app/about/about.state.js"></script>
+    <script src="app/contact/contact.state.js"></script>
+    <script src="app/journalism/journalism.state.js"></script>
+    <script src="app/journalism/journalism.controller.js"></script>
+    <script src="app/documentary/documentary.state.js"></script>
+    <script src="app/documentary/documentary.controller.js"></script>
+    <script src="app/home/home.state.js"></script>
+    <script src="app/login/login.state.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/signup/signup.state.js"></script>
+    <script src="app/signup/signup.controller.js"></script>
+    <script src="app/add-story/add-story.state.js"></script>
+    <script src="app/add-story/add-story.controller.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div ng-app="mtSiteApp">
+      <navbar></navbar>
+      <jumbotron></jumbotron>
+      <ui-view></ui-view>
+      <connect></connect>
+      <footer></footer>
+    </div>
+
+  </body>
+</html>
