@@ -9,8 +9,9 @@ var storySchema = new mongoose.Schema({
   airDate : { type : Date, required : true },
   title : { type : String, required : true }, 
   description: { type : String, required : true },
-  type : { type : String, enum: ['documentary', 'journalism'] },
-  videoUri: { type: String, required : true, unique : true }
+  type : { type : String, enum: ['documentary', 'journalism'], required: true },
+  videoUri: { type: String, required : true, unique : true }, 
+  showName : { type : String, enum: ['newsHour', 'needToKnow', 'film', 'treasures'], required: true }
 }); 
 
 

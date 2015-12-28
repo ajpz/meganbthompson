@@ -1,10 +1,10 @@
 <ul class="nav nav-pills pull-right">
-  <li role="presentation" ng-show="isLoggedIn()" ui-sref-active="active"><a ui-sref="addStory">Add New Story</a></li>
+  <li role="presentation" ng-show="isLoggedIn()"><a ui-sref="addStory"  ui-sref-active="active">Add New Story</a></li>
   <li role="presentation" ng-show="isLoggedIn()"><a ng-click="logout()">Logout</a></li>
+  <li role="presentatino" ng-hide="isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
   <li role="presentation"><a ui-sref="home" ui-sref-active="active">Home</a></li>
   <li role="presentation"><a ui-sref="journalism" ui-sref-active="active">Journalism</a></li>
   <li role="presentation"><a ui-sref="documentary" ui-sref-active="active">Documentary</a></li>
   <li role="presentation"><a ui-sref="about" ui-sref-active="active">About</a></li>
   <li role="presentation"><a ui-sref="contact" ui-sref-active="active">Contact</a></li>
-  <li role="presentatino"><a ui-sref="login" ui-sref-active="active">Login</a></li>
 </ul>

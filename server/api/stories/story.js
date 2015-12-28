@@ -7,12 +7,24 @@ module.exports = router;
 
 // mount: /api/stories
 
-// get all stories by type
-router.get('/:type', function(req, res, next) {
+// get all stories, or stories filtered by type
+router.get('/', function(req, res, next) {
+  var query = {}; 
+  if(req.query.type) query = { type : req.query.type };
 
-  Story.find({ type: req.params.type }).exec()
+  Story.find(query).exec()
     .then(function(stories) {
       res.status(200).json(stories); 
+    })
+    .then(null, next); 
+})
+
+// get one story
+router.get('/:id', function(req, res, next) {
+  console.log('hit route with ', req.params.id)
+  Story.findOne({ _id : req.params.id }).exec()
+    .then(function(story) {
+      res.status(200).json(story); 
     })
     .then(null, next); 
 })
@@ -28,12 +40,22 @@ router.post('/', function(req, res, next) {
     .then(null, next); 
 })
 
-// get one story
-router.get('/:id', function(req, res, next) {
-  console.log('hit route with ', req.params.id)
-  Story.findOne({ _id : req.params.id }).exec()
-    .then(function(story) {
-      res.status(200).json(story); 
+// update an existing story
+router.put('/:id/edit', function(req, res, next) {
+  console.log('hit put route with ', req.params.id, req.body); 
+  Story.findOneAndUpdate({ _id : req.params.id }, req.body, { runValidators: true, new : true }).exec()
+    .then(function(updatedStory) {
+      console.log(updatedStory); 
+      res.status(200).json(updatedStory); 
+    })
+    .then(null, next); 
+})
+
+// delete a story
+router.delete('/:id', function(req, res, next) {
+  Story.remove({ _id : req.params.id })
+    .then(function(deleteStatus) {
+      res.status(204).end(); 
     })
     .then(null, next); 
 })

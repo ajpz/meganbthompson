@@ -1,3 +1,9 @@
 .fa-twitter-square {
   color: rgb(85, 26, 139);
 }
+
+.contact-info {
+  margin: 100px auto;
+  width: 100%;
+  text-align: center;
+}

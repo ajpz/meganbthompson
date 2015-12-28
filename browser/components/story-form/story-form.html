@@ -1,0 +1,42 @@
+<div class="container">
+  <h3 ng-show="lastSaved">Your story, "{{lastSaved.title}}," was saved</h3>
+  <legend>{{formTitle}}: </legend>
+
+  <form role="form" name="storyInfoForm" ng-submit="submitMethod()">
+    <div class="form-group">
+      <label for="title">Story Title:</label>
+      <input type="text" class="form-control" id="title" ng-model="storyDetails.title">
+    </div>
+    <div class="form-group">
+      <label for="airDate">Original air date:</label>
+      <input type="date" class="form-control" id="airDate" ng-model="storyDetails.airDate">
+    </div>
+    <div class="form-group">
+      <label for="description">Story description:</label>
+      <textarea class="form-control" id="description" ng-model="storyDetails.description">enter blurb</textarea>
+    </div>
+    <div class="form-group">
+      <label for="storyType">Story type:</label>
+      <input type="radio" name="storyType" value="journalism"  ng-model="storyDetails.type" checked> Journalism
+      <input type="radio" name="storyType" value="documentary" ng-model="storyDetails.type"> Documentary
+    </div>
+    <div class="form-group">
+      <label for="videoUri">Video source URI:</label>
+      <input type="text" class="form-control" id="videoUri" ng-model="storyDetails.videoUri" placeholder="eg. y99kODtyVhk">
+    </div>
+    <div class="form-group">
+      <label for="showName">Show name:</label>
+      <select name="showName" ng-model="storyDetails.showName">
+        <option value="newsHour">PBS NewsHour</option>
+        <option value="needToKnow">Need to Know</option> 
+        <option value="film">Film</option>
+        <option value="treasures">Treasures of New York</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">{{submitType}}</button>
+  </form>
+
+  <a ui-sref='journalism'><button type="submit" class="btn btn-danger">Disregard changes</button></a>
+  <p>{{storyDetails}}</p>
+</div>

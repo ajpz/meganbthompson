@@ -1,3 +1,10 @@
 .story-block {
   display: block;
+  border-top: solid 2px;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+.logo-pics {
+  width: 100px;
 }

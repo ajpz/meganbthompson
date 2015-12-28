@@ -1,14 +1,14 @@
 app.controller('AddStoryCtrl', function($scope, AuthFactory, StoryFactory, $state) {
   $scope.lastStorySaved = null; 
+  $scope.newStory = {}; 
 
-  $scope.postStory = function(storyDetails) {
+  $scope.postStory = function(newStory) {
     if(!AuthFactory.isLoggedIn()) $state.go('login'); 
     else {
-      console.log('postStory called with ', storyDetails); 
-      StoryFactory.saveStory(storyDetails)
+      StoryFactory.saveStory(newStory)
         .then(function(savedStory){
-          console.log('story saved'); 
           $scope.lastStorySaved = savedStory; 
+          $scope.newStory = {}; 
           $state.go('addStory')
         })
     }

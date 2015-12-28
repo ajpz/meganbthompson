@@ -10,11 +10,13 @@ var app = angular.module('mtSiteApp', ['ui.router']);
 // });
 
 
-app.config(function($sceDelegateProvider) {
+app.config(function($sceDelegateProvider, $locationProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
     'https://www.youtube.com/**'
   ]);
+
+  // $locationProvider.html5Mode(true); 
 });
 
 app.run(function(AuthFactory) {
