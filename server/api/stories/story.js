@@ -11,6 +11,7 @@ module.exports = router;
 router.get('/', function(req, res, next) {
   var query = {}; 
   if(req.query.type) query = { type : req.query.type };
+  if(req.query.addDate) query = { addDate : {$gt : req.query.addDate}}; 
 
   Story.find(query).exec()
     .then(function(stories) {

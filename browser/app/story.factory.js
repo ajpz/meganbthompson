@@ -1,11 +1,19 @@
 app.factory('StoryFactory', function($http) {
   return {
     // get all stories of type: ['journalism', 'documentary']
-    getStories: function(type) {
+    getStories: function(arg) {
+      var params = {}; 
+
+      if(['journalism', 'documentary'].indexOf(arg)>-1) {
+        params.type = arg; 
+      } else if(arg instanceof Date) {
+        params.addDate = arg; 
+      }
+
       return $http({
         method: 'GET', 
         url: '/api/stories/', 
-        params: { type : type }
+        params: params      
       })
       .then(function(res) {
         return res.data

@@ -1,5 +1,6 @@
 <ul class="nav nav-pills pull-right">
   <li role="presentation" ng-show="isLoggedIn()"><a ui-sref="addStory"  ui-sref-active="active">Add New Story</a></li>
+  <li role="presentation" ng-show="isLoggedIn()"><a ui-sref="sendEmail" ui-sref-active="active">Send Email</a></li>
   <li role="presentation" ng-show="isLoggedIn()"><a ng-click="logout()">Logout</a></li>
   <li role="presentatino" ng-hide="isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
   <li role="presentation"><a ui-sref="home" ui-sref-active="active">Home</a></li>

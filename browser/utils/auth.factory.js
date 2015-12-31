@@ -20,7 +20,6 @@ app.factory('AuthFactory', function($http, $rootScope) {
     }, 
 
     loginAdmin: function(adminDetails) {
-      console.log('authfactory loginAdmin invoked')
       return $http({
         method: 'POST', 
         url: '/auth/login',
@@ -34,11 +33,9 @@ app.factory('AuthFactory', function($http, $rootScope) {
     }, 
 
     getSessionStatus: function() {
-      console.log('Run ran getSessionStatus'); 
       return $http.get('/auth/session-status')
         .then(res => res.data)
         .then(function(sessionAdmin) {
-          console.log('current session is ', sessionAdmin)
           admin = sessionAdmin; 
           return admin; 
         })

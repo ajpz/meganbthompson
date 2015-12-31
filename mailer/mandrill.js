@@ -6,6 +6,7 @@ var mandrillApiKey = require('../ignore/api-keys').mandrill();
 var mandrill_client = new mandrill.Mandrill(mandrillApiKey);
 
 module.exports = function sendEmail(to_name, to_email, from_name, from_email, subject, message_html){
+    console.log('sendEmail invoked'); 
     var message = {
         "html": message_html,
         "subject": subject,
