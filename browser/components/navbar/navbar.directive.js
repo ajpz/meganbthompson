@@ -1,4 +1,4 @@
-app.directive('navbar', function(AuthFactory, $state) {
+app.directive('myNavbar', function(AuthFactory, $state) {
   return {
     restrict: 'E', 
     templateUrl: 'components/navbar/navbar.html', 

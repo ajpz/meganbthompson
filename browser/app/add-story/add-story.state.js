@@ -3,6 +3,7 @@ app.config(function($stateProvider) {
   .state('addStory', {
     url: '/addStory',  
     templateUrl: 'app/add-story/add-story.html',
-    controller: 'AddStoryCtrl'
+    controller: 'AddStoryCtrl', 
+    authenticate: true
   })
 })

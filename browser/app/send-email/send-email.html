@@ -1,21 +1,36 @@
-<div class="container">
+<my-jumbotron></my-jumbotron>
+<div class="container email-composer">
   <h3 ng-show="sendStatus">An email was sent to your subscribers!</h3>
+
+  <h3>Send an update email to your subscribers</h3>
   <div class="row">
-    <div class="col-sm-8"><legend>Send an email to all subscribers: </legend>
-      <form role="form" name="date-range" ng-submit="showStories()">
-        <div class="form-group">
-          <label for="addDate">Send all stories added since:</label>
-          <input type="date" class="form-control" id="addDate" ng-model="query.addDate">
-        </div>
-        <button type="submit" class="btn btn-success">Find stories</button>
+    <div class="col-sm-8">
+      <div class="form-group">
+        <label for="email-greeting">Email Greeting: </label>
+        <textarea class="form-control" id="email-greeting" ng-model="email.greeting" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="email-body">Email body: </label>
+        <textarea class="form-control" id="email-body" ng-model="email.body" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="email-goodbye">Email Goodbye: </label>
+        <textarea class="form-control" id="email-goodbye" ng-model="email.goodbye" required></textarea>
+      </div>
+
+      <form role="form" name="story-selector" ng-submit="setStories()">
+        <legend>Select which stories to send: </legend>
+        <select name="stories" ng-model="selectedStories" ng-options="story.title for story in allStories" data-ng-attr-size="{{allStories.length}}" multiple></select>
       </form>
-  
-      <a ui-sref='journalism'><button type="submit" class="btn btn-danger">Disregard changes</button></a>
+      <br>
+      <a ui-sref='portfolio'><button type="submit" class="btn btn-danger">Nevermind</button></a>
       
-      <div ng-show="stories">
-        <h4>You're date selection results in the following stories:</h4>
+      <div ng-show="selectedStories">
+        <h4>You've selected the following stories:</h4>
         <ul>
-          <li ng-repeat="story in stories">{{story.title}}</li>
+          <li ng-repeat="story in selectedStories">{{story.title}}</li>
         </ul>
       <a ng-click="sendEmails()"><button class="btn btn-success">Send emails</button></a>
       </div>
@@ -23,7 +38,7 @@
    
     </div>
  
-    <div class="col-sm-4">
+    <div class="col-sm-4"><legend>Your subscribers:</legend>
       <ul>
         <li ng-repeat="subscriber in subscribers">{{subscriber.email}}</li>
       </ul>

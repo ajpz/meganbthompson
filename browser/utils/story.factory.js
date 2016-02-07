@@ -1,6 +1,6 @@
 app.factory('StoryFactory', function($http) {
   return {
-    // get all stories of type: ['journalism', 'documentary']
+    // get all stories of type: ['journalism', 'documentary'] or within date range
     getStories: function(arg) {
       var params = {}; 
 

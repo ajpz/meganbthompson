@@ -1,4 +1,33 @@
-<div class="contact-info">
-  <a><p>contact@meganbthompson.com</p></a>
-  <a href="https://twitter.com/megbthompson"><i class="fa fa-twitter-square fa-2x"></i></a>
+<my-jumbotron></my-jumbotron>
+<div class="container">
+
+  <div class="row contact-info">
+
+    <div class="col-xs-12 col-sm-4">
+      <a href="mailto:contact@meganbthompson.com">
+        <i class="glyphicon glyphicon-envelope"></i>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <a href="https://twitter.com/megbthompson" target="_blank">
+        <i class="fa fa-twitter-square"></i>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <a href="https://www.linkedin.com/in/megan-thompson-299b5b3" target="_blank">
+        <i class="fa fa-linkedin-square"></i>  
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2 text-center">  
+
+    <form class="form-group" ng-submit="addSubscriber()">
+      <label for="email-input" class="text-center">Sign up to receive notifications when new stories are posted:</label>
+      <input id="email-input" type="text" class="form-control" placeholder="email address" ng-model="subscriberEmail"></input>
+      <button>Submit</button>
+    </form>
+  </div>
+
 </div>
+<!-- <connect></connect> -->

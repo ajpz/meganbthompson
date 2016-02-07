@@ -1,18 +1,18 @@
 <html>
 <head><meta charset='utf-8'></head>
 <body>
-  <p>Hello,</p>
+  <p><%=greeting%></p>
   <br>
-  <p>Thank you for your interest in my work! I've released a few new stories to my website that you might be interested in. See below for links.
+  <p><%=body%>
     <ul>
       <% for(var i=0; i<latestStories.length; i++) {%>
-        <li><a href="localhost:1337/#/journalism"><p><%=latestStories[i].title%>: <%=latestStories[i].description%></p></a></li>
+        <li><a href="http://localhost:1337/#/portfolio"><p><%=latestStories[i].title%>: <%=latestStories[i].description%></p></a></li>
       <% } %>
     </ul>
   </p>
 
   <p>
-    All the best,<br>
+    <%=goodbye%><br>
     Megan
   </p>
 </body>

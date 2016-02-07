@@ -1,9 +1,39 @@
 .fa-twitter-square {
-  color: rgb(85, 26, 139);
+  color: rgb(58, 215, 236);
+}
+
+.fa-linkedin-square {
+  color: rgb(20,123,171);
+}
+
+.glyphicon-envelope {
+  color: rgb(231,92,43);
 }
 
 .contact-info {
-  margin: 100px auto;
+  margin: 30px auto;
   width: 100%;
   text-align: center;
+}
+
+.contact-info i {
+  font-size: 150px;
+}
+
+
+.form-group button {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #9BC1BC;
+  width: 100px;
+  color: #E6EBE0;
+}
+
+.form-group label {
+  color: #5CA4A9;
+  font-size: 16px;
+}
+#email-input {
+  width: 400px;
+  margin: auto;
 }

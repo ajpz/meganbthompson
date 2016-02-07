@@ -11,5 +11,6 @@ module.exports = function(app) {
   app.use(express.static(path.join(__dirname, '..', '..', 'node_modules', 'jquery'))); 
   app.use(express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular')));
   app.use(express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular-ui-router')));  
-  app.use(express.static(path.join(__dirname, '..', '..', 'node_modules', 'font-awesome'))); 
+  app.use(express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular-sanitize')));  
+  app.use(express.static(path.join(__dirname, '..', '..', 'node_modules', 'font-awesome')));
 }

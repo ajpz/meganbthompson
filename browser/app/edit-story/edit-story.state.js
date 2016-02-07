@@ -12,6 +12,7 @@ app.config(function($stateProvider) {
             return story; 
           })
       }
-    }
+    }, 
+    authenticate: true
   })
 })

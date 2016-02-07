@@ -1,4 +1,10 @@
-img {
+.picture-gallery img {
   padding: 10px 0;
-  /*width: 100%;*/
+  height: auto;
+  width: 100%;
+}
+
+
+.about-mt {
+  padding-top: 10px;
 }

@@ -17,8 +17,14 @@ app.factory('SubscriberFactory', function($http) {
       }).then(res => res.data); 
     }, 
 
-    sendEmails: function(stories, subscribers) {
-      var data = { stories: stories, subscribers: subscribers }; 
+    sendEmails: function(stories, subscribers, emailText) {
+      
+      var data = { 
+        stories: stories, 
+        subscribers: subscribers, 
+        email: emailText 
+      }; 
+      
       return $http({
         method: 'POST', 
         url: '/api/subscribers/email', 

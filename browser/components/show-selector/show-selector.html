@@ -1,0 +1,31 @@
+<div class="row" id="show-selectors">
+  <!-- HEADER SECTION: SHOW TABS -->
+  <ul class="nav nav-tabs col-sm-8">
+<!--       <li role="presentation" ng-class="{active: isActiveCategory('all')}">
+      <a ng-click="setCategory('all')" href="">All</a>
+    </li> -->
+    <li role="presentation" ng-class="{active: isActiveCategory('newsHour')}">
+      <a ng-click="setCategory('newsHour')" href="">PBS NewsHour Weekend</a>
+    </li>
+    <li role="presentation" ng-class="{active: isActiveCategory('needToKnow')}">
+      <a ng-click="setCategory('needToKnow')" href="">Need to Know</a>
+    </li>
+    <li role="presentation" ng-class="{active: isActiveCategory('worldFocus')}">
+      <a ng-click="setCategory('worldFocus')" href="">World Focus</a>
+    </li>
+    <li role="presentation" ng-class="{active: isActiveCategory('documentary')}">
+      <a ng-click="setCategory('documentary')" href="">Documentary</a>
+    </li>
+  </ul>
+  <!-- HEADER SECTION: SHOW FILTER INPUT BOX -->
+  <div class="col-sm-4">
+    <!-- <span>Showing {{filtered.length}} results</span> -->
+    <div id="filter-container">
+      <span style="white-space:nowrap" class="pull-right">
+        <label for="title-filter">Keyword: </label>
+        <input id="title-filter" type="text" ng-model="showTitle"></input>
+      </span>
+    </div>
+  </div>
+  <!-- END: SHOW FILTER -->
+</div>

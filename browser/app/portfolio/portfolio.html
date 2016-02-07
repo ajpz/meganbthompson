@@ -1,0 +1,52 @@
+<my-jumbotron></my-jumbotron>
+
+
+<div class="container" id="portfolio-container">
+
+  <show-selector class="container" id="selector-container" is-active-category="isActiveCategory" set-category="setCategory" show-title="showTitle"></show-selector><!--
+
+  
+  --><div id="story-container">  
+    <!-- STORY BLOCKS REPEATED -->
+    <div class="row story-block" ng-repeat="story in filtered = (stories | showFilter:currentCategory | filter : { title : showTitle} | orderBy: '-airDate')">
+      <div class="col-sm-2">
+        <h3>{{story.airDate | date}}</h3>
+        <img class="logo-pics" ng-src="/images/{{story.showName}}.png">
+        <a ui-sref="editStory({ id : story._id })" class="bt btn-default" ng-show="isLoggedIn()">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a ng-click="removeStory(story)" class="bt btn-default" ng-show="isLoggedIn()">
+          <span class="glyphicon glyphicon-remove"></span>
+        </a>
+      </div>
+      <div class="col-sm-5">
+        <h3></h3>
+        <h3>{{story.title}}</h3>    
+        <p>{{story.description}}</p>
+      </div>
+      <div class="col-sm-5">
+        <!-- 500 x 281 -->
+        <!-- <iframe width="385" height="216" ng-src="{{getVideoUrl(story)}}" frameborder="0" allowfullscreen></iframe> -->
+        <video-player video-url="getVideoUrl(story)"></video-player>
+      </div>
+    </div>
+    <!-- END: STORY BLOCKS -->
+  </div>
+  <!-- END: STORY CONTAINER -->
+</div>
+
+<!--       <a class="btn btn-primary" data-toggle="modal" href='#{{story.videoUri}}'>Trigger modal</a>
+ -->  
+<!--       <div class="modal fade" id="{{story.videoUri}}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Megan's Video</h4>
+            </div>
+            <div class="modal-body">
+              <iframe width="500" height="281" ng-src="{{getVideoUrl(story)}}" frameborder="0" allowfullscreen></iframe>              
+            </div>
+          </div>
+        </div>
+      </div>

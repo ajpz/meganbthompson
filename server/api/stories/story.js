@@ -22,7 +22,6 @@ router.get('/', function(req, res, next) {
 
 // get one story
 router.get('/:id', function(req, res, next) {
-  console.log('hit route with ', req.params.id)
   Story.findOne({ _id : req.params.id }).exec()
     .then(function(story) {
       res.status(200).json(story); 
@@ -32,7 +31,7 @@ router.get('/:id', function(req, res, next) {
 
 // save a new story
 router.post('/', function(req, res, next) {
-
+  console.log('POST: ', req.body); 
   var newStory = new Story(req.body); 
   newStory.save()
     .then(function(newStory) {
@@ -43,10 +42,9 @@ router.post('/', function(req, res, next) {
 
 // update an existing story
 router.put('/:id/edit', function(req, res, next) {
-  console.log('hit put route with ', req.params.id, req.body); 
+  console.log('PUT: ', req.body)
   Story.findOneAndUpdate({ _id : req.params.id }, req.body, { runValidators: true, new : true }).exec()
     .then(function(updatedStory) {
-      console.log(updatedStory); 
       res.status(200).json(updatedStory); 
     })
     .then(null, next); 

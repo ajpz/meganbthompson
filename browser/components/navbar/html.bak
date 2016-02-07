@@ -1,0 +1,54 @@
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+
+  <!-- -fluid means it will expand to full width of avail viewport; alternative is a fixed width for each viewport size-range -->
+  <div class="container-fluid"> 
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">
+        <!-- <i class="glyphicon glyphicon-camera"></i> -->
+        <!-- <img src="../../../images/noun_4301.png" alt="camera-icon"/> -->
+        Megan B. Thompson
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-main">   
+      <!-- positions them horizontally -->
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- Only shown when admin is logged in -->
+        <li role="presentation" ng-show="isLoggedIn()">
+          <a ui-sref="addStory"  ui-sref-active="active">Add New Story</a>
+        </li>
+        <li role="presentation" ng-show="isLoggedIn()">
+          <a ui-sref="sendEmail" ui-sref-active="active">Send Email</a>
+        </li>
+        <li role="presentation" ng-show="isLoggedIn()">
+          <a ng-click="logout()">Logout</a>
+        </li>
+
+        <!-- Basic navigation links -->
+        <li role="presentation">
+          <a ui-sref="home" ui-sref-active="active">Home</a>
+        </li>
+        <li role="presentation">
+          <a ui-sref="portfolio" ui-sref-active="active">Portfolio</a>
+        </li>
+        <li role="presentation">
+          <a ui-sref="about" ui-sref-active="active">About</a>
+        </li>
+        <li role="presentation">
+          <a ui-sref="contact" ui-sref-active="active">Contact</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</nav>

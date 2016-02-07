@@ -12,10 +12,16 @@ module.exports = createAndSendEmail;
 // @params: array of recipients (only email addresses), 
 //          array of stories
 //********************************************************
-function createAndSendEmail(subscribers, stories) {
+function createAndSendEmail(subscribers, stories, emailText) {
   var template = fs.readFileSync('./mailer/html_template.ejs', 'utf8'); 
   subscribers.forEach(function(subscriber) {
-    var customizedTemplate = ejs.render(template, { latestStories: stories });
+    var customizedTemplate = ejs.render(template, { 
+      latestStories: stories, 
+      greeting: emailText.greeting, 
+      body: emailText.body, 
+      goodbye: emailText.goodbye 
+    });
+
     sendEmail('BobLaRue', subscriber.email, 'Megan', 'meganbthompson@gmail.com', 'New stories available!', customizedTemplate)
   })
 }

@@ -1,4 +1,50 @@
-navbar {
-  display: block;
-  width: 100%; 
+nav.navbar {
+  background-color: #5CA4A9;
+}
+/*
+.navbar .navbar-brand {
+  color: #E6EBE0; 
+  font-size: 18px; 
+  text-shadow: none;
+}*/
+
+
+.navbar .navbar-brand img {
+  height: 50px;
+  padding: 0 20px;
+  float: left;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar .navbar-nav li a {
+  color: #E6EBE0;  
+  text-shadow: none;
+  height: 75px;
+  line-height: 40px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #F4F1BB;
+  background-color: #5CA4A9 ;
+}
+
+.navbar .navbar-nav a:focus {
+  color: #F4F1BB;
+  background-color: #5CA4A9 ;
+}
+
+.navbar .navbar-nav a.active {
+  color: #9BC1BC;
+}
+
+
+/*248, 202, 112*/
+nav.navbar {
+  text-transform: uppercase;
+}
+
+.navbar .navbar-toggle span {
+  font-size: 1.0em; 
+  background-color: #E6EBE0;
 }

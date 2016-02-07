@@ -1,3 +1,26 @@
+/*
+orange: #ED6A5A;
+yellow: #F4F1BB; 
+lightGreen: #9BC1BC;
+darkGreen: #5CA4A9;
+cream: #E6EBE0 ;
+darkerCream: #D9DBBC;
+evendarkerCream: #F4EBD9;
+
+*/
+
+
 body {
-  background-color: rgb(238,228,215)
+  background-color: #E6EBE0; 
+  /*prevents navbar-fixed from sitting on top of jumbotron -- creates space though*/
+  padding-top: 75px;
+  font-family: 'Arimo', sans-serif;
+/*  font-family: 'Josefin Sans', sans-serif;*/
+/*  font-family: 'Poiret One', sans-serif;*/
+/*  font-family: 'Quicksand', sans-serif;*/
 }
+
+.container {
+  max-width: 1000px; 
+}
+

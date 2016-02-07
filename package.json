@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.8",
+    "angular-sanitize": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "babel": "^6.3.13",
     "babel-core": "^6.3.21",
@@ -21,6 +22,7 @@
     "bootstrap": "^3.3.6",
     "bootstrap-social": "^4.11.0",
     "chalk": "^1.1.1",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-session": "^1.12.1",

@@ -5,38 +5,42 @@
   <form role="form" name="storyInfoForm" ng-submit="submitMethod()">
     <div class="form-group">
       <label for="title">Story Title:</label>
-      <input type="text" class="form-control" id="title" ng-model="storyDetails.title">
+      <input type="text" class="form-control" id="title" ng-model="storyDetails.title" required>
     </div>
     <div class="form-group">
       <label for="airDate">Original air date:</label>
-      <input type="date" class="form-control" id="airDate" ng-model="storyDetails.airDate">
+      <input type="date" class="form-control" id="airDate" ng-model="storyDetails.airDate" required>
     </div>
     <div class="form-group">
       <label for="description">Story description:</label>
-      <textarea class="form-control" id="description" ng-model="storyDetails.description">enter blurb</textarea>
+      <textarea class="form-control" id="description" ng-model="storyDetails.description" required>enter blurb</textarea>
     </div>
     <div class="form-group">
       <label for="storyType">Story type:</label>
-      <input type="radio" name="storyType" value="journalism"  ng-model="storyDetails.type" checked> Journalism
-      <input type="radio" name="storyType" value="documentary" ng-model="storyDetails.type"> Documentary
+      <input type="radio" name="storyType" value="journalism"  ng-model="storyDetails.type" required checked> <span>Journalism</span>
+      <input type="radio" name="storyType" value="documentary" ng-model="storyDetails.type" required> <span>Documentary</span>
     </div>
     <div class="form-group">
       <label for="videoUri">Video source URI:</label>
-      <input type="text" class="form-control" id="videoUri" ng-model="storyDetails.videoUri" placeholder="eg. y99kODtyVhk">
+      <input type="text" class="form-control" id="videoUri" ng-model="storyDetails.videoUri" required placeholder="eg. y99kODtyVhk">
     </div>
     <div class="form-group">
+      <label for="showName">Show name:</label>
+      <select name="showName" ng-model="storyDetails.showName" ng-options="showName.value as showName.displayName for showName in showNames" required></select>
+    </div>
+    <!-- <div class="form-group">
       <label for="showName">Show name:</label>
       <select name="showName" ng-model="storyDetails.showName">
         <option value="newsHour">PBS NewsHour</option>
         <option value="needToKnow">Need to Know</option> 
+        <option value="worldFocus">World Focus</option>         
         <option value="film">Film</option>
         <option value="treasures">Treasures of New York</option>
       </select>
-    </div>
+    </div> -->
 
-    <button type="submit" class="btn btn-success">{{submitType}}</button>
+    <button type="submit" class="btn btn-success" ng-disabled="storyInfoForm.$invalid">{{submitType}}</button>
   </form>
-
-  <a ui-sref='journalism'><button type="submit" class="btn btn-danger">Disregard changes</button></a>
-  <p>{{storyDetails}}</p>
+  <br>
+  <a ui-sref='journalism'><button type="submit" class="btn btn-danger">I changed my mind</button></a>
 </div>

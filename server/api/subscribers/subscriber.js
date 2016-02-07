@@ -22,7 +22,6 @@ router.post('/', function(req, res, next) {
 })
 
 router.post('/email', function(req, res, next) {
-  console.log('hit Send Email route!', req.body); 
-  createAndSendEmail(req.body.subscribers, req.body.stories); 
+  createAndSendEmail(req.body.subscribers, req.body.stories, req.body.email); 
   res.status(200).end(); 
 })

@@ -9,7 +9,10 @@
 
     <!-- external CSS dependencies -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="bootstrap-social.css" rel="stylesheet"/>
+    <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand|Poiret+One' rel='stylesheet' type='text/css'>
+    <!-- <link href="bootstrap-social.css" rel="stylesheet"/> -->
     <link href="css/font-awesome.css" rel="stylesheet"/>
 
     <!-- local CSS dependencies --> 
@@ -21,21 +24,22 @@
     <link href="components/signin/signin.css" rel="stylesheet"/>
     <link href="components/story-form/story-form.css" rel="stylesheet"/>
     <link href="app/about/about.css" rel="stylesheet"/>
-    <link href="app/contact/contact.css" rel="stylesheet"/>
-    <link href="app/journalism/journalism.css" rel="stylesheet"/>
-    <link href="app/documentary/documentary.css" rel="stylesheet"/>
-    <link href="app/home/home.css" rel="stylesheet"/>
     <link href="app/add-story/add-story.css" rel="stylesheet"/>
+    <link href="app/contact/contact.css" rel="stylesheet"/>
+    <link href="app/portfolio/portfolio.css" rel="stylesheet"/>
+    <link href="app/home/home.css" rel="stylesheet"/>
+    <link href="app/send-email/send-email.css" rel="stylesheet"/>
 
     <!--external JS dependencies-->
     <script src="dist/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>  
     <script src="angular.min.js"></script>
     <script src="release/angular-ui-router.min.js"></script>
+    <script src="angular-sanitize.js"></script>
 
     <!--local JS dependencies-->
     <script src="app/main.js"></script>
-    <script src="app/story.factory.js"></script>
+    <script src="utils/story.factory.js"></script>
     <script src="utils/auth.factory.js"></script>    
     <script src="utils/subscriber.factory.js"></script>    
     <script src="utils/showFilter.js"></script>
@@ -46,12 +50,13 @@
     <script src="components/footer/footer.directive.js"></script>
     <script src="components/signin/signin.directive.js"></script>
     <script src="components/story-form/story-form.directive.js"></script>
+    <script src="components/show-selector/show-selector.directive.js"></script>
+    <script src="components/video-player/video-player.directive.js"></script>
     <script src="app/about/about.state.js"></script>
     <script src="app/contact/contact.state.js"></script>
-    <script src="app/journalism/journalism.state.js"></script>
-    <script src="app/journalism/journalism.controller.js"></script>
-    <script src="app/documentary/documentary.state.js"></script>
-    <script src="app/documentary/documentary.controller.js"></script>
+    <script src="app/contact/contact.controller.js"></script>
+    <script src="app/portfolio/portfolio.state.js"></script>
+    <script src="app/portfolio/portfolio.controller.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/login/login.state.js"></script>
     <script src="app/login/login.controller.js"></script>
@@ -70,13 +75,12 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <base href="/">
   </head>
-  <body>
+  <body id="bootstrap-body-override">
     <div ng-app="mtSiteApp">
-      <navbar></navbar>
-      <jumbotron></jumbotron>
+      <my-navbar></my-navbar>
       <ui-view></ui-view>
-      <connect></connect>
       <footer></footer>
     </div>
 

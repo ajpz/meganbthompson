@@ -1,4 +1,5 @@
 app.controller('EditStoryCtrl', function($scope, story, $state, StoryFactory, $filter) {
+  
   $scope.story = story; 
   $scope.story.airDate = new Date($scope.story.airDate); //convert string date back to date object for angular
 
@@ -6,7 +7,7 @@ app.controller('EditStoryCtrl', function($scope, story, $state, StoryFactory, $f
     StoryFactory.updateStory(story._id, story)
       .then(function(story) {
         console.log('updated story is ', story); 
-        $state.go('journalism') // TODO: make this return to a hyperlink within the state, for the updated story, not just to the state generically
+        $state.go('portfolio') // TODO: make this return to a hyperlink within the state, for the updated story, not just to the state generically
       })
   }
 
