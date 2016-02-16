@@ -4,7 +4,7 @@
   "description": "MT journalism and documentary website",
   "main": "server/index.js",
   "scripts": {
-    "start": "nodemon --watch server",
+    "start": "nodemon --watch server -e js,html server/index.js",
     "seed": "node seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
