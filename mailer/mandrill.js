@@ -2,7 +2,6 @@
 
 // Create mandrill API client-connection
 var mandrill = require('mandrill-api/mandrill');
-// var mandrillApiKey = require('../ignore/api-keys').mandrill(); 
 var MANDRILL_KEY = require('../server/env/').MANDRILL_KEY; 
 var mandrill_client = new mandrill.Mandrill(MANDRILL_KEY);
 
