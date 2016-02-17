@@ -12,10 +12,20 @@ app.directive('showSelector', function($document) {
       console.log(scope.showTitle); 
 
       $document.on('scroll', function(event) {
-        if ($document.scrollTop() >= 240) {
-          element.addClass("fix-selector"); 
+        var screenWidth = $(window).width(); 
+
+        if(screenWidth >= 768) {
+          if ($document.scrollTop() >= 240) {
+            element.addClass("fix-selector"); 
+          } else {
+            element.removeClass("fix-selector"); 
+          } 
         } else {
-          element.removeClass("fix-selector"); 
+          if ($document.scrollTop() >= 240) {
+            element.addClass("fix-selector"); 
+          } else {
+            element.removeClass("fix-selector"); 
+          }  
         }
       })
     }
