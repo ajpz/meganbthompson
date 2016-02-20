@@ -27,7 +27,6 @@ app.factory('AuthFactory', function($http, $rootScope) {
       })
         .then(function(response) {
           admin = response.data; 
-          console.log('in auth callback: ', admin);
           return admin; 
         })
     }, 

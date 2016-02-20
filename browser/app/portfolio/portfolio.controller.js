@@ -24,7 +24,6 @@ app.controller('PortfolioCtrl', function($scope, StoryFactory, $state) {
   // create full url from youtube formatted resource-id
   $scope.getVideoUrl = function(story) {
     if(story.videoUri.indexOf('http') > -1) return story.videoUri; 
-    console.log('got here'); 
     return 'https://www.youtube.com/embed/' + story.videoUri;  
   }
 
