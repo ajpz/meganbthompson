@@ -21,7 +21,7 @@ app.directive('videoPlayer', function() {
         videoTemplate = '/components/video-player/video-player-thirteen.html'; 
       } else if(scope.url.indexOf('pbs') > -1) { 
         videoTemplate = '/components/video-player/video-player-pbs.html';
-      }else if(scope.url.indexOf('vimeo') > -1) {
+      }else if(scope.url.indexOf('snagfilms') > -1) {
         //handle vimeo
         videoTemplate = '/components/video-player/video-player-vimeo.html'; 
       }
