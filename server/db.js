@@ -3,11 +3,9 @@ var path = require('path');
 var mongoose = require('mongoose'); 
 var Promise = require('bluebird'); 
 Promise.promisifyAll(mongoose); 
-
-// var databaseURI = 'mongodb://localhost:27017/mt_work'; 
+ 
 var DATABASE_URI = require(path.join(__dirname, './env')).DATABASE_URI; 
 
-// var db = mongoose.connect(databaseURI).connection; 
 var db = mongoose.connect(DATABASE_URI).connection; 
 
 db.on('open', function () {
