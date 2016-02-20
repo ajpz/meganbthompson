@@ -28,6 +28,10 @@ app.controller('PortfolioCtrl', function($scope, StoryFactory, $state) {
     return 'https://www.youtube.com/embed/' + story.videoUri;  
   }
 
+  $scope.getVideoImg = function(story) {
+    return story.videoImg; 
+  }
+
   // uses StoryFactory to premanently remove stories
   $scope.removeStory = function(story) {
     var response = prompt("Are you sure you want to delete this story? (y or n)"); 
