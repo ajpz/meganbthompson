@@ -12,10 +12,10 @@
       <div class="col-sm-2">
         <h3>{{story.airDate | date}}</h3>
         <img class="logo-pics" ng-src="/images/{{story.showName}}.png">
-        <a ui-sref="editStory({ id : story._id })" class="bt btn-default" ng-show="isLoggedIn()">
+        <a ui-sref="editStory({ id : story._id })" class="bt btn-default" ng-if="isLoggedIn()">
           <span class="glyphicon glyphicon-pencil"></span>
         </a>
-        <a ng-click="removeStory(story)" class="bt btn-default" ng-show="isLoggedIn()">
+        <a ng-click="removeStory(story)" class="bt btn-default" ng-if="isLoggedIn()">
           <span class="glyphicon glyphicon-remove"></span>
         </a>
       </div>
@@ -27,7 +27,7 @@
       <div class="col-sm-5">
         <!-- 500 x 281 -->
         <!-- <iframe width="385" height="216" ng-src="{{getVideoUrl(story)}}" frameborder="0" allowfullscreen></iframe> -->
-        <video-player video-url="getVideoUrl(story)"></video-player>
+        <video-player video-url="getVideoUrl(story)" video-img="getVideoImg(story)"></video-player>
       </div>
     </div>
     <!-- END: STORY BLOCKS -->
