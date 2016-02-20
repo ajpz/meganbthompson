@@ -38,6 +38,10 @@ nav.navbar {
   color: #9BC1BC;
 }
 
+.navbar .navbar-header {
+  height: 75px;
+}
+
 
 /*248, 202, 112*/
 nav.navbar {
