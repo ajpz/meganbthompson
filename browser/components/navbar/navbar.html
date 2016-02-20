@@ -21,13 +21,13 @@
       <ul class="nav navbar-nav navbar-right">
 
         <!-- Only shown when admin is logged in -->
-        <li role="presentation" ng-show="isLoggedIn()">
+        <li role="presentation" ng-if="isLoggedIn()">
           <a ui-sref="addStory"  ui-sref-active="active">Add New Story</a>
         </li>
-        <li role="presentation" ng-show="isLoggedIn()">
+        <li role="presentation" ng-if="isLoggedIn()">
           <a ui-sref="sendEmail" ui-sref-active="active">Send Email</a>
         </li>
-        <li role="presentation" ng-show="isLoggedIn()">
+        <li role="presentation" ng-if="isLoggedIn()">
           <a ng-click="logout()">Logout</a>
         </li>
 
