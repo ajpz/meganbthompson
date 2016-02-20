@@ -2,6 +2,10 @@ app.factory('AuthFactory', function($http, $rootScope) {
 
   var admin = { isAdmin: false }; 
 
+  var extractData = function(response) {
+    return response.data; 
+  };
+
   $rootScope.isLoggedIn = function() {
     return admin.isAdmin; 
   }
@@ -33,7 +37,7 @@ app.factory('AuthFactory', function($http, $rootScope) {
 
     getSessionStatus: function() {
       return $http.get('/auth/session-status')
-        .then(res => res.data)
+        .then(extractData)
         .then(function(sessionAdmin) {
           admin = sessionAdmin; 
           return admin; 
