@@ -1,4 +1,8 @@
 app.factory('StoryFactory', function($http) {
+  var extractData = function(response) {
+    return response.data; 
+  };
+
   return {
     // get all stories of type: ['journalism', 'documentary'] or within date range
     getStories: function(arg) {
@@ -24,21 +28,21 @@ app.factory('StoryFactory', function($http) {
         method: 'GET', 
         url: '/api/stories/' + id
       })
-      .then(res => res.data)
+      .then(extractData)
     },
     saveStory: function(storyDetails) {
       return $http({
         method: 'POST', 
         url: '/api/stories', 
         data: storyDetails
-      }).then(res => res.data); 
+      }).then(extractData); 
     }, 
     updateStory: function(id, story) {  
       return $http({
         method: 'PUT', 
         url: 'api/stories/' + id + '/edit', 
         data: story
-      }).then(res => res.data); 
+      }).then(extractData); 
     }, 
     deleteStory: function(id) {
       return $http({

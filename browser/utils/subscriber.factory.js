@@ -1,4 +1,7 @@
 app.factory('SubscriberFactory', function($http) {
+  var extractData = function(response) {
+    return response.data; 
+  };
   
   return {
 
@@ -7,14 +10,14 @@ app.factory('SubscriberFactory', function($http) {
         method: 'POST', 
         url: '/api/subscribers', 
         data: { email: email }
-      }).then(res => res.data)
+      }).then(extractData)
     }, 
 
     getSubscribers: function() {
       return $http({
         method: 'GET', 
         url: '/api/subscribers'
-      }).then(res => res.data); 
+      }).then(extractData); 
     }, 
 
     sendEmails: function(stories, subscribers, emailText) {
@@ -29,7 +32,7 @@ app.factory('SubscriberFactory', function($http) {
         method: 'POST', 
         url: '/api/subscribers/email', 
         data: data
-      }).then(res => res.data)
+      }).then(extractData)
     }
 
   }
