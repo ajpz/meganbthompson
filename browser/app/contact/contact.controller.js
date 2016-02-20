@@ -7,7 +7,6 @@ app.controller('ContactCtrl', function($scope, SubscriberFactory) {
     SubscriberFactory.addSubscriber($scope.subscriberEmail)
     .then(function(subscriber) {
       $scope.subscriberEmail = ''; 
-      console.log(subscriber); 
       // clean form
     })
   }

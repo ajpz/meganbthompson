@@ -9,8 +9,6 @@ app.directive('showSelector', function($document) {
     }, 
     link: function(scope, element, attrs) {
 
-      console.log(scope.showTitle); 
-
       $document.on('scroll', function(event) {
         var screenWidth = $(window).width(); 
 
