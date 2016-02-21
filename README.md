@@ -3,6 +3,8 @@
 
 #### Take a look: www.meganbthompson.com
 
+Built with the MEAN stack. 
+
 #####Public Features include:
 
 1. Portfolio page organized by News Program, searchable by story title
