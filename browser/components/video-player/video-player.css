@@ -1,0 +1,22 @@
+@media (max-width: 385px) {
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+  video-player img {
+    width: 100%;
+    height: auto; 
+  } 
+}
+
+@media (min-width: 386px) {
+  iframe {
+    width: 385px;
+    height: 216px;
+  }
+
+  video-player img {
+    width: 385px;
+    height: 216px; 
+  } 
+}
