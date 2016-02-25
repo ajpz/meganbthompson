@@ -9,6 +9,12 @@ app.directive('myNavbar', function(AuthFactory, $state) {
             $state.go('home'); 
           })
       }
+      
+      //force the responsive navbar to collapse after a user selects a page
+      $('#navbar-collapse-main a').click(function() {
+        $('#navbar-collapse-main').collapse('hide'); 
+      })
+
     }
   }
 })  
