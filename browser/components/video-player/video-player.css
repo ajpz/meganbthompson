@@ -9,14 +9,26 @@
   } 
 }
 
-@media (min-width: 386px) {
+@media (min-width: 768px) {
+  iframe {
+    width: 275px;
+    height: 154px;
+  }
+
+  video-player img {
+    width: 275px; 
+    height: 154px;
+  } 
+}
+
+@media (min-width: 992px) {
   iframe {
     width: 385px;
     height: 216px;
   }
 
   video-player img {
-    width: 385px;
-    height: 216px; 
+    width: 385px; 
+    height: 216px;
   } 
 }
