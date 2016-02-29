@@ -1,3 +1,6 @@
 node_modules
 seed.js
 ignore
+dest
+.DS_Store
+

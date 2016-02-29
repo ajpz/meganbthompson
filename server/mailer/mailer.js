@@ -13,7 +13,7 @@ module.exports = createAndSendEmail;
 //          array of stories
 //********************************************************
 function createAndSendEmail(subscribers, stories, emailText) {
-  var template = fs.readFileSync('./mailer/html_template.ejs', 'utf8'); 
+  var template = fs.readFileSync('./server/mailer/html_template.ejs', 'utf8'); 
   subscribers.forEach(function(subscriber) {
     var customizedTemplate = ejs.render(template, { 
       latestStories: stories, 

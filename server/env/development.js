@@ -1,3 +1,6 @@
+var apiKeys = require('../../ignore/api-keys'); 
+var MANDRILL_KEY = apiKeys.mandrill(); 
+
 module.exports = {
   "DATABASE_URI": "mongodb://localhost:27017/mt_work", 
   "SESSION_SECRET": "Optimus Prime is my real dad",
@@ -16,5 +19,5 @@ module.exports = {
     "clientSecret": "INSERT_GOOGLE_CLIENT_SECRET_HERE",
     "callbackURL": "INSERT_GOOGLE_CALLBACK_HERE"
   }, 
-  "MANDRILL_KEY": "process.env.MANDRILL_KEY"
+  "MANDRILL_KEY": MANDRILL_KEY
 };
