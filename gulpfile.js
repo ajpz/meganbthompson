@@ -11,6 +11,7 @@ var livereload = require('gulp-livereload');
 var runSeq = require('run-sequence');
 var sass = require('gulp-sass'); 
 var rename = require('gulp-rename');
+var minifyCSS = require('gulp-minify-css');
 
 // Dev Tasks
 //-----------------------------------------------------------------------------
@@ -74,12 +75,22 @@ gulp.task('buildJSProduction', function() {
     .pipe(gulp.dest('dest/scripts')); 
 }); 
 
+gulp.task('buildCSSProduction', function () {
+  return gulp.src('./browser/main.scss')
+    .pipe(sass())
+    .pipe(rename('style.css'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./dest/styles'))
+});
+
 // Composed tasks
 //-----------------------------------------------------------------------------
 gulp.task('build', function() {
   if(process.env.NODE_ENV === 'production') {
-    runSeq(['buildJSProduction']); 
+    console.log('PRODUCTION ENVIRONMENT: ', process.env.NODE_ENV); 
+    runSeq(['buildJSProduction', 'buildCSSProduction']); 
   } else {
+    console.log('DEVELOPMENT ENVIRONMENT: ', process.env.NODE_ENV); 
     runSeq(['buildJS', 'buildCSS']); 
   }
 }); 
