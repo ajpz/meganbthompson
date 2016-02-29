@@ -2,7 +2,7 @@
 
 // Create mandrill API client-connection
 var mandrill = require('mandrill-api/mandrill');
-var MANDRILL_KEY = require('../server/env/').MANDRILL_KEY; 
+var MANDRILL_KEY = require('../env').MANDRILL_KEY; 
 var mandrill_client = new mandrill.Mandrill(MANDRILL_KEY);
 
 module.exports = function sendEmail(to_name, to_email, from_name, from_email, subject, message_html){

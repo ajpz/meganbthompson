@@ -2,7 +2,7 @@
 
 var router = require('express').Router(); 
 var Subscriber = require('./subscriber.model'); 
-var createAndSendEmail = require('../../../mailer/mailer.js'); 
+var createAndSendEmail = require('../../mailer/mailer.js'); 
 
 module.exports = router; 
 
