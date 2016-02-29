@@ -9,6 +9,8 @@ var eslint = require('gulp-eslint');
 var notify = require('gulp-notify');
 var livereload = require('gulp-livereload'); 
 var runSeq = require('run-sequence');
+var sass = require('gulp-sass'); 
+var rename = require('gulp-rename');
 
 // Dev Tasks
 //-----------------------------------------------------------------------------
@@ -46,6 +48,20 @@ gulp.task('buildJS', ['lintJS'], function() {
     .pipe(gulp.dest('dest/scripts')); 
 }); 
 
+gulp.task('buildCSS', function () {
+
+    var sassCompilation = sass();
+    sassCompilation.on('error', console.error.bind(console));
+
+    return gulp.src('./browser/main.scss')
+        .pipe(plumber({
+            errorHandler: notify.onError('SASS processing failed! Check your gulp process.')
+        }))
+        .pipe(sassCompilation)
+        .pipe(rename('style.css'))
+        .pipe(gulp.dest('./dest/styles'));
+});
+
 
 // Productions Tasks
 //-----------------------------------------------------------------------------
@@ -64,7 +80,7 @@ gulp.task('build', function() {
   if(process.env.NODE_ENV === 'production') {
     runSeq(['buildJSProduction']); 
   } else {
-    runSeq(['buildJS']); 
+    runSeq(['buildJS', 'buildCSS']); 
   }
 }); 
 
@@ -73,14 +89,14 @@ gulp.task('default', function () {
     gulp.start('build');
 
     // Run when anything inside of browser/ changes.
-    gulp.watch('browser/app/**', function () {
+    gulp.watch('browser/**', function () {
         runSeq('buildJS', 'reload');
     });
 
     // Run when anything inside of browser/scss changes.
-//    gulp.watch('browser/scss/**', function () {
-//        runSeq('buildCSS', 'reloadCSS');
-//    });
+    gulp.watch('browser/**', function () {
+        runSeq('buildCSS', 'reloadCSS');
+    });
 
     gulp.watch('server/**/*.js', ['lintJS']);
 
