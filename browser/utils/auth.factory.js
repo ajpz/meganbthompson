@@ -1,4 +1,4 @@
-app.factory('AuthFactory', function($http, $rootScope) {
+app.factory("AuthFactory", function($http, $rootScope) {
 
   var admin = { isAdmin: false }; 
 
@@ -14,8 +14,8 @@ app.factory('AuthFactory', function($http, $rootScope) {
 
     signupAdmin: function(adminDetails) {
       return $http({
-        method: 'POST', 
-        url: '/signup', 
+        method: "POST", 
+        url: "/signup", 
         data: adminDetails
       })
         .then(function(response) {
@@ -25,8 +25,8 @@ app.factory('AuthFactory', function($http, $rootScope) {
 
     loginAdmin: function(adminDetails) {
       return $http({
-        method: 'POST', 
-        url: '/auth/login',
+        method: "POST", 
+        url: "/auth/login",
         data: adminDetails
       })
         .then(function(response) {
@@ -36,7 +36,7 @@ app.factory('AuthFactory', function($http, $rootScope) {
     }, 
 
     getSessionStatus: function() {
-      return $http.get('/auth/session-status')
+      return $http.get("/auth/session-status")
         .then(extractData)
         .then(function(sessionAdmin) {
           admin = sessionAdmin; 
@@ -49,7 +49,7 @@ app.factory('AuthFactory', function($http, $rootScope) {
     }, 
 
     logout: function() {
-      return $http.delete('/auth/admin')
+      return $http.delete("/auth/admin")
         .then(function() {
           return admin = { isAdmin : false }; 
         })

@@ -1,6 +1,6 @@
-app.directive('myJumbotron', function() {
+app.directive("myJumbotron", function() {
   return {
-    restrict: 'E', 
-    templateUrl: 'components/jumbotron/jumbotron.html'
+    restrict: "E", 
+    templateUrl: "components/jumbotron/jumbotron.html"
   }
 })

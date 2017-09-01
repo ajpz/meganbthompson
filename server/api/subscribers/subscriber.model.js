@@ -1,7 +1,7 @@
-'use strict'; 
+"use strict"; 
 
-var mongoose = require('mongoose'); 
-var db = require('../../db'); 
+var mongoose = require("mongoose"); 
+var db = require("../../db"); 
 
 var subscriberSchema = new mongoose.Schema({
   addDate : { type : Date, default : Date.now},
@@ -9,6 +9,6 @@ var subscriberSchema = new mongoose.Schema({
   active: { type : Boolean, required : true, default : true}
 }); 
 
-var Subscriber = db.model('Subscriber', subscriberSchema); 
+var Subscriber = db.model("Subscriber", subscriberSchema); 
 
 module.exports = Subscriber; 

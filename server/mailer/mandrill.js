@@ -1,12 +1,12 @@
 /* git ignore --- should be kept private */
 
 // Create mandrill API client-connection
-var mandrill = require('mandrill-api/mandrill');
-var MANDRILL_KEY = require('../env').MANDRILL_KEY; 
+var mandrill = require("mandrill-api/mandrill");
+var MANDRILL_KEY = require("../env").MANDRILL_KEY; 
 var mandrill_client = new mandrill.Mandrill(MANDRILL_KEY);
 
 module.exports = function sendEmail(to_name, to_email, from_name, from_email, subject, message_html){
-    console.log('sendEmail invoked'); 
+    console.log("sendEmail invoked"); 
     var message = {
         "html": message_html,
         "subject": subject,
@@ -30,7 +30,7 @@ module.exports = function sendEmail(to_name, to_email, from_name, from_email, su
     mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool}, function(result) {
     }, function(e) {
         // Mandrill returns the error as an object with name and message keys
-        console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
-        // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+        console.log("A mandrill error occurred: " + e.name + " - " + e.message);
+        // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id "customer-123"
     });
 }

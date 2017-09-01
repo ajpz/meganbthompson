@@ -1,6 +1,6 @@
-app.controller('AddStoryCtrl', function($scope, AuthFactory, StoryFactory, $state) {
+app.controller("AddStoryCtrl", function($scope, AuthFactory, StoryFactory, $state) {
 
-  console.log('AddStroyCtrl running....')
+  console.log("AddStroyCtrl running....")
   $scope.lastStorySaved = null; 
   $scope.newStory = {}; 
 
@@ -10,10 +10,10 @@ app.controller('AddStoryCtrl', function($scope, AuthFactory, StoryFactory, $stat
         .then(function(savedStory){
           $scope.lastStorySaved = savedStory; 
           $scope.newStory = {}; 
-          $state.go('addStory')
+          $state.go("addStory")
         })
         .then(null, function(err) {
-          console.log('in error cb ', err);
+          console.log("in error cb ", err);
 
         })
   } 

@@ -1,4 +1,4 @@
-app.factory('SubscriberFactory', function($http) {
+app.factory("SubscriberFactory", function($http) {
   var extractData = function(response) {
     return response.data; 
   };
@@ -7,16 +7,16 @@ app.factory('SubscriberFactory', function($http) {
 
     addSubscriber: function(email) {
       return $http({
-        method: 'POST', 
-        url: '/api/subscribers', 
+        method: "POST", 
+        url: "/api/subscribers", 
         data: { email: email }
       }).then(extractData)
     }, 
 
     getSubscribers: function() {
       return $http({
-        method: 'GET', 
-        url: '/api/subscribers'
+        method: "GET", 
+        url: "/api/subscribers"
       }).then(extractData); 
     }, 
 
@@ -29,8 +29,8 @@ app.factory('SubscriberFactory', function($http) {
       }; 
       
       return $http({
-        method: 'POST', 
-        url: '/api/subscribers/email', 
+        method: "POST", 
+        url: "/api/subscribers/email", 
         data: data
       }).then(extractData)
     }

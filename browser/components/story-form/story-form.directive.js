@@ -1,7 +1,7 @@
-app.directive('storyForm', function() {
+app.directive("storyForm", function() {
   return {
-    restrict: 'E', 
-    templateUrl: '/components/story-form/story-form.html', 
+    restrict: "E", 
+    templateUrl: "/components/story-form/story-form.html", 
     scope: {
       lastSaved: "=",
       formTitle: "@", 
@@ -11,16 +11,16 @@ app.directive('storyForm', function() {
     }, 
     link: function(scope, element, attrs) {
       scope.showNames = [
-        { displayName: 'PBS NewsHour', 
-          value: 'newsHour' }, 
-        { displayName: 'NeedToKnow', 
-          value: 'needToKnow' }, 
-        { displayName: 'World Focus', 
-          value: 'worldFocus' }, 
-        { displayName: 'Film', 
-          value: 'film' }, 
-        { displayName: 'Treasures of New York', 
-          value: 'treasures'}
+        { displayName: "PBS NewsHour", 
+          value: "newsHour" }, 
+        { displayName: "NeedToKnow", 
+          value: "needToKnow" }, 
+        { displayName: "World Focus", 
+          value: "worldFocus" }, 
+        { displayName: "Film", 
+          value: "film" }, 
+        { displayName: "Treasures of New York", 
+          value: "treasures"}
       ]
     }
   }

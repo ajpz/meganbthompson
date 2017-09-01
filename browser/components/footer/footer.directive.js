@@ -1,6 +1,6 @@
-app.directive('footer', function() {
+app.directive("footer", function() {
   return {
-    restrict: 'E', 
-    templateUrl: '/components/footer/footer.html'
+    restrict: "E", 
+    templateUrl: "/components/footer/footer.html"
   }
 })

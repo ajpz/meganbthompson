@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function($scope, AuthFactory, $state) {
+app.controller("LoginCtrl", function($scope, AuthFactory, $state) {
 
   $scope.badAttempt = false; 
   $scope.adminDetails = null; 
@@ -7,7 +7,7 @@ app.controller('LoginCtrl', function($scope, AuthFactory, $state) {
     
     AuthFactory.loginAdmin(adminDetails)
       .then(function(admin) {
-        $state.go('addStory'); 
+        $state.go("addStory"); 
     })
       .then(null, function(err) {
         $scope.badAttempt = err.data.message; 

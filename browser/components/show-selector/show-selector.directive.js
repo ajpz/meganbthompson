@@ -1,7 +1,7 @@
-app.directive('showSelector', function($document) {
+app.directive("showSelector", function($document) {
   return {
-    restrict: 'E', 
-    templateUrl: '/components/show-selector/show-selector.html', 
+    restrict: "E", 
+    templateUrl: "/components/show-selector/show-selector.html", 
     scope: {
       isActiveCategory: "=", 
       setCategory: "=", 
@@ -9,7 +9,7 @@ app.directive('showSelector', function($document) {
     }, 
     link: function(scope, element, attrs) {
 
-      $document.on('scroll', function(event) {
+      $document.on("scroll", function(event) {
         var screenWidth = $(window).width(); 
 
         if(screenWidth >= 768) {

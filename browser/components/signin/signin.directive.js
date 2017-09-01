@@ -1,11 +1,11 @@
-app.directive('signin', function() {
+app.directive("signin", function() {
   return {
-    restrict: 'E', 
-    templateUrl: '/components/signin/signin.html', 
+    restrict: "E", 
+    templateUrl: "/components/signin/signin.html", 
     scope: {
       actionLabel: "@",
       adminCreds: "=", 
-      adminAction: '&'
+      adminAction: "&"
     } 
   }
 })
