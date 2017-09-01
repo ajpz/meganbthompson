@@ -1,8 +1,8 @@
 app.controller("SendEmailCtrl", function($scope, $state, subscribers, allStories, SubscriberFactory, StoryFactory, $anchorScroll) {
 
-  $scope.sendStatus = null; 
-  $scope.subscribers = subscribers; 
-  $scope.allStories = allStories; 
+  $scope.sendStatus = null;
+  $scope.subscribers = subscribers;
+  $scope.allStories = allStories;
 
   $scope.email = {
     greeting: "Hello,",
@@ -13,19 +13,19 @@ app.controller("SendEmailCtrl", function($scope, $state, subscribers, allStories
   // $scope.showStories = function() {
   //   StoryFactory.getStories($scope.query.addDate)
   //     .then(function(stories) {
-  //       $scope.stories = stories; 
+  //       $scope.stories = stories;
   //     })
   //     .then(null, console.error.bind(console))
   // }
 
   $scope.sendEmails = function() {
-    if($scope.selectedStories.length === 0) return; 
-    SubscriberFactory.sendEmails($scope.selectedStories, $scope.subscribers, $scope.email) 
+    if($scope.selectedStories.length === 0) return;
+    SubscriberFactory.sendEmails($scope.selectedStories, $scope.subscribers, $scope.email)
       .then(function() {
-        $scope.sendStatus = "Emails sent!"; 
-        $scope.selectedStories = null; 
-        // $scope.query = null; 
-        $anchorScroll(); 
+        $scope.sendStatus = "Emails sent!";
+        $scope.selectedStories = null;
+        // $scope.query = null;
+        $anchorScroll();
       })
       .then(null, console.error.bind(console))
   }

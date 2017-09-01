@@ -1,15 +1,15 @@
-var gulp = require('gulp'); 
-var concat = require('gulp-concat'); 
-var uglify = require('gulp-uglify'); 
-var ngAnnotate = require('gulp-ng-annotate'); 
-var babel = require('gulp-babel'); 
-var plumber = require('gulp-plumber'); 
-var sourcemaps = require('gulp-sourcemaps'); 
-var eslint = require('gulp-eslint'); 
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var ngAnnotate = require('gulp-ng-annotate');
+var babel = require('gulp-babel');
+var plumber = require('gulp-plumber');
+var sourcemaps = require('gulp-sourcemaps');
+var eslint = require('gulp-eslint');
 var notify = require('gulp-notify');
-var livereload = require('gulp-livereload'); 
+var livereload = require('gulp-livereload');
 var runSeq = require('run-sequence');
-var sass = require('gulp-sass'); 
+var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
 
@@ -25,7 +25,7 @@ gulp.task('reloadCSS', function () {
     return gulp.src('./public/style.css').pipe(livereload());
 });
 
-// Linter 
+// Linter
 gulp.task('lintJS', function () {
     return gulp.src(['./browser/**/*.js', './server/**/*.js'])
         .pipe(plumber({
@@ -42,11 +42,11 @@ gulp.task('buildJS', ['lintJS'], function() {
   return gulp.src(['browser/app/app.js', 'browser/**/*.js'])
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(concat('main.js'))  
+    .pipe(concat('main.js'))
     .pipe(babel())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dest/scripts')); 
-}); 
+    .pipe(gulp.dest('dest/scripts'));
+});
 
 gulp.task('buildCSS', function () {
 
@@ -67,12 +67,12 @@ gulp.task('buildCSS', function () {
 //-----------------------------------------------------------------------------
 gulp.task('buildJSProduction', function() {
   return gulp.src(['browser/app/app.js', 'browser/**/*.js'])
-    .pipe(concat('main.js')) 
-    .pipe(babel()) 
+    .pipe(concat('main.js'))
+    .pipe(babel())
     .pipe(ngAnnotate())
     .pipe(uglify())
-    .pipe(gulp.dest('dest/scripts')); 
-}); 
+    .pipe(gulp.dest('dest/scripts'));
+});
 
 gulp.task('buildCSSProduction', function () {
   return gulp.src('./browser/main.scss')
@@ -86,13 +86,13 @@ gulp.task('buildCSSProduction', function () {
 //-----------------------------------------------------------------------------
 gulp.task('build', function() {
   if(process.env.NODE_ENV === 'production') {
-    console.log('PRODUCTION ENVIRONMENT: ', process.env.NODE_ENV); 
-    runSeq(['buildJSProduction', 'buildCSSProduction']); 
+    console.log('PRODUCTION ENVIRONMENT: ', process.env.NODE_ENV);
+    runSeq(['buildJSProduction', 'buildCSSProduction']);
   } else {
-    console.log('DEVELOPMENT ENVIRONMENT: ', process.env.NODE_ENV); 
-    runSeq(['buildJS', 'buildCSS']); 
+    console.log('DEVELOPMENT ENVIRONMENT: ', process.env.NODE_ENV);
+    runSeq(['buildJS', 'buildCSS']);
   }
-}); 
+});
 
 gulp.task('default', function () {
 
