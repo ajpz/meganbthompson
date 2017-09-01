@@ -3,4 +3,4 @@ seed.js
 ignore
 dest
 .DS_Store
-
+*.local
