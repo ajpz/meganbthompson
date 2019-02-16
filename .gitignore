@@ -4,3 +4,4 @@ ignore
 dest
 .DS_Store
 *.local
+new_stories.js
